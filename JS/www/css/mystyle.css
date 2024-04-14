@@ -1,0 +1,22 @@
+img {
+    width: 100%;
+    max-width: 700px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+}
+.container {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+label.error{
+    color: #F00;
+    font-weight: bold;
+}
+input.error,
+select.error,
+textarea.error {
+    border: 1px red solid;
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/mystyle.css">
+        <title>JQuery UI</title>
+    </head>
+    <body>
+        <h1>Apache Cordova Hello Rudra Acharya!</h1>
+        <div data-role="page" id="RAHomePage">
+            <header data-position="fixed" data-role="header" data-theme="a">
+                <h1>RA Feedback A3</h1>
+                <div data-iconpos="top" data-role="navbar">
+                    <ul>
+                        <li><a class="ui-btn-active ui-state-persist" data-icon="home" href="#RAHomePage">Home</a></li>
+                        <li><a data-icon="plus " href="#RAAddFeedbackPage">Add</a></li>
+                        <li><a data-icon="grid" href="#RAModifyPage" id="ModifyPage">Review</a></li>
+                        <li><a data-icon="gear" href="#RASettingsPage">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section class="border" data-role="content">
+                <h1>
+                    Rudra Acharya's Feedback A3 App
+                </h1>
+                <p>Welcome to the Rudra Acharya's Feedback A3 app, a prototype designed for mobile programming
+                    class. This is the first iteration of the app to keep track of different places you visited along with your
+                    reviews.
+                </p>
+            
+            <!--    <img src="img/avengers.jpg" alt="image"/>-->
+            <!--    ADD IMAGE-->
+            
+                <p>Please feel free to contact me if you have any suggestions!</p>
+                <a href="#" data-icon="plus" data-role="button" >Call:519.748.5220</a>
+                <a href="#" data-icon="plus" data-role="button" >racharya0435@conestogac.on.ca</a>
+            
+                <p>Website:</p>
+            
+                <a href="#" data-icon="plus" data-role="button" >Conestoga College</a>
+            
+            </section>
+            
+            <footer data-position="fixed" data-role="footer" data-theme="a">
+                <h3>&copy; 2024 Rudra Acharya</h3>
+            </footer>
+        </div>
+        <!-- Add page -->
+
+        <div data-role="page" id="RAAddFeedbackPage">
+            <header data-position="fixed" data-role="header" data-theme="a">
+                <h1>Add a Feedback</h1>
+                <div data-iconpos="top" data-role="navbar">
+                    <ul>
+                        <li><a data-icon="home" href="#RAHomePage">Home</a></li>
+                        <li><a class="ui-btn-active ui-state-persist" data-icon="plus " href="#RAAddFeedbackPage">Add</a></li>
+                        <li><a data-icon="grid" href="#RAModifyPage" id="ModifyPage">Review</a></li>
+                        <li><a data-icon="gear" href="#RASettingsPage">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section class="border" data-role="content">
+                <form id="frmAdd" name="frmAdd">
+                    <label for="frmAddtxtBussiness">Business Name:</label>
+                    <input id="frmAddtxtBussiness" type="text" name="frmAddtxtBussiness">
+
+                    <label for="frmAddDropType">Type:</label>
+                    <select id="frmAddDropType" name="frmAddDropType">
+                    </select>
+
+                    <label for="frmAddtxtReviewer">Reviewer Email:</label>
+                    <input id="frmAddtxtReviewer" type="text" name="frmAddtxtReviewer">
+
+                    <label for="frmAddtxtAreaReviewerComments">Reviewer Comments:</label>
+                    <textarea name="frmAddtxtAreaReviewerComments" id="frmAddtxtAreaReviewerComments" cols="30" rows="10"></textarea>
+
+                    <label for="frmAddtxtReviewDate">Review Date:</label>
+                    <input type="date" id="frmAddtxtReviewDate" name="frmAddtxtReviewDate">
+
+                    <input type="checkbox" id="frmAddrating" name="frmAddrating" value="rate">
+                    <label for="frmAddrating">Do you want to add your ratings?</label><br>
+
+                    <div id="frmAddRatings" style="display:none">
+
+                        <label for="frmAddtxtFoodQuality">Food Quality (0-5):</label>
+                        <input id="frmAddtxtFoodQuality" type="number" name="frmAddtxtFoodQuality" value="0">
+
+                        <label for="frmAddtxtService">Service (0-5):</label>
+                        <input id="frmAddtxtService" type="number" name="frmAddtxtService" value="0">
+
+                        <label for="frmAddtxtValue">Value (0-5):</label>
+                        <input id="frmAddtxtValue" type="number" name="frmAddtxtValue" value="0">
+
+                        <label for="frmAddtxtOverallRating">Overall Rating (calculated):</label>
+                        <input id="frmAddtxtOverallRating" type="text" name="frmAddtxtOverallRating">
+
+                    </div>
+
+                    <button type="button" data-inline="true" class="ui-btn-active" id="frmAddbtnSave" name="frmAddbtnSave">Save
+                    </button>
+
+                </form>
+            </section>
+            <footer data-position="fixed" data-role="footer" data-theme="a">
+                <h1>&copy;2024 Rudra Acharya</h1>
+            </footer>
+        </div>
+
+        <!-- Modifypage -->
+
+        <div data-role="page" id="RAModifyPage">
+            <header data-position="fixed" data-role="header" data-theme="a">
+                <h1>Modify Feedback</h1>
+                <div data-iconpos="top" data-role="navbar">
+                    <ul>
+                        <li><a data-icon="home" href="#RAHomePage">Home</a></li>
+                        <li><a data-icon="plus " href="#RAAddFeedbackPage">Add</a></li>
+                        <li><a class="ui-btn-active ui-state-persist" data-icon="grid" id="ModifyPage" href="#RAModifyPage">Review</a></li>
+                        <li><a data-icon="gear" href="#RASettingsPage">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section class="border" id="modidiv" data-role="content">
+                <div id="businessList"></div>
+                <form id="frmModify" name="frmModify" style="display: none;">
+                    <label for="frmModifytxtBusinessName">Business Name:</label>
+                    <input id="frmModifytxtBusinessName" type="text" name="frmModifytxtBusinessName">
+
+                    <label for="frmModifyDropType">Type:</label>
+                    <select id="frmModifyDropType" name="frmModifyDropType">
+                        <option value="Other">Other</option>
+                        <option value="Asian">Asian</option>
+                        <option value="Canadian">Canadian</option>
+                    </select>
+
+                    <label for="frmModifytxtReviewerEmail">Reviewer Email:</label>
+                    <input id="frmModifytxtReviewerEmail" type="text" name="frmModifytxtReviewerEmail">
+
+                    <label for="frmModifytxtAreaReviewerComments">Reviewer Comments:</label>
+                    <textarea name="frmModifytxtAreaReviewerComments" id="frmModifytxtAreaReviewerComments" cols="30" rows="10"></textarea>
+
+                    <label for="frmModifytxtReviewDate">Review Date:</label>
+                    <input type="date" id="frmModifytxtReviewDate" name="frmModifytxtReviewDate">
+
+                    <input type="checkbox" id="frmModifyrating" name="frmModifyrating" value="rate">
+                    <label for="frmModifyrating">Do you want to add your ratings?</label><br>
+
+                    <div id="frmModifyRatings" style="display:none">
+
+                        <label for="frmModifytxtFoodQuality">Food Quality (0-5):</label>
+                        <input id="frmModifytxtFoodQuality" type="number" name="frmModifytxtFoodQuality" value="0">
+
+                        <label for="frmModifytxtService">Service (0-5):</label>
+                        <input id="frmModifytxtService" type="number" name="frmModifytxtService" value="0">
+
+                        <label for="frmModifytxtValue">Value (0-5):</label>
+                        <input id="frmModifytxtValue" type="number" name="frmModifytxtValue" value="0">
+
+                        <label for="frmModifytxtOverallRating">Overall Rating (calculated):</label>
+                        <input id="frmModifytxtOverallRating" type="text" name="frmModifytxtOverallRating">
+
+                    </div>
+
+                    <div data-role="controlgroup" data-type="horizontal">
+                        <a  id="frmModifybtnCancel" data-role="button" >Cancel</a>
+                        <a  id="frmModifybtnDelete" data-theme="b" data-role="button" >Delete</a>
+                        <a  id="frmModifybtnSave" class="ui-btn-active" data-role="button" >Update</a>
+                    </div>
+
+                </form>
+            </section>
+            <footer data-position="fixed" data-role="footer" data-theme="a">
+                <h1>&copy;2024 Rudra Acharya</h1>
+            </footer>
+        </div>
+
+        <!-- Settings page -->
+
+        <div data-role="page" id="RASettingsPage">
+            <header data-position="fixed" data-role="header" data-theme="a">
+                <h1>Settings</h1>
+                <div data-iconpos="top" data-role="navbar">
+                    <ul>
+                        <li><a data-icon="home" href="#RAHomePage">Home</a></li>
+                        <li><a data-icon="plus " href="#RAAddFeedbackPage">Add</a></li>
+                        <li><a data-icon="grid" href="#RAModifyPage" id="ModifyPage">Review</a></li>
+                        <li><a data-icon="gear" class="ui-btn-active ui-state-persist" href="#RASettingsPage">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form id="frmSettings" name="frmSettings">
+                    <label for="frmSettingtxtReviewerEmailSettings">Default reviewer Email:</label>
+                    <input id="frmSettingtxtReviewerEmailSettings" type="text" name="frmSettingtxtReviewerEmailSettings" value="racharya0435@conestogac.on.ca">
+                    <button class="ui-btn-active" id="frmSettingbtnSaveDefaults" name="frmSettingbtnSaveDefaults">Save Defaults
+                    </button>
+                    <button data-theme="b" id="frmSettingbtnClear" name="frmSettingbtnClear">Clear all reviews
+                    </button>
+                </form>
+            </section>
+            <footer data-position="fixed" data-role="footer" data-theme="a">
+                <h1>&copy;2024 Rudra Acharya</h1>
+            </footer>
+        </div>
+        <script src="cordova.js"></script>
+        <script src="cordova_plugins.js"></script>
+        <script src="js/index.js"></script>
+        <!-- Include Bootstrap CSS from CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- Include jQuery from CDN -->
+        <!--jquery-->
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        
+        <!--jquery mobile-->
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!--jquery mobile style-->
+        <link href="css/lib/jquery.mobile-1.4.5.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="js/lib/jquery.validate.js"></script>
+        <script src="js/RAdatabase.js"></script>
+        <script src="js/Rafacade.js"></script>
+        <script src="js/RAglobal.js"></script>
+        <script src="js/RAutil.js"></script>
+
+        <!-- Include Bootstrap JS from CDN (make sure to include Popper.js for Bootstrap tooltips and popovers) -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    </body>
+</html>
